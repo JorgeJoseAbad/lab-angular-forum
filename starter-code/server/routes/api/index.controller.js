@@ -4,6 +4,8 @@ const router  = express.Router();
 const authRoutes = require('./authentication.controller');
 const thrRoutes  = require('./threads.controller');
 
+console.log("in index-controller");
+
 router.use('/', authRoutes);
 router.use('/threads', thrRoutes);
 

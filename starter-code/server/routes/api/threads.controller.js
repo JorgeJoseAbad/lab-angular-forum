@@ -4,6 +4,8 @@ const Thread   = require('../../models/thread.model');
 const Reply    = require('../../models/reply.model');
 const loggedIn = require('../../utils/isAuthenticated');
 
+console.log("in threads-controller");
+
 router.get('/', (req, res, next) => {
   Thread
     .find({})

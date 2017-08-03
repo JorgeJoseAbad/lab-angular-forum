@@ -4,7 +4,10 @@ const router   = express.Router();
 const User     = require('../../models/user.model');
 const bcrypt   = require('bcrypt');
 
+console.log("in authentication-controller");
+
 router.post("/login", (req, res, next) => {
+  console.log("in /LOGIN");
   passport.authenticate('local', (err, user, info) =>  {
     if (err) { return next(err); }
 
@@ -22,14 +25,14 @@ router.post("/login", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  console.log(req.body)
+  console.log(req.body);
   const { username, email, password } = req.body;
 
   if (!username || !password || !email) {
     return res
       .status(400)
       .json({ message: "Please provide all fields" });
-    ;
+    
   }
 
   User.findOne({ username }, "username", (err, user) => {

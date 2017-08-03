@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import {environment} from '../../environments/environment';
+
+@Injectable()
+export class ThreadsService {
+  //BASE_URL: string = 'http://localhost:3000';
+  BASE_URL: String=environment.baseURL;
+  options:Object = {withCredentials:true};
+
+  constructor(private http: Http) {}
+
+  getThreads() {
+    console.log("en getlist service");
+      return this.http.get(`${this.BASE_URL}/api/threads`)
+        .map((res) => res.json());
+
+    }
+
+}

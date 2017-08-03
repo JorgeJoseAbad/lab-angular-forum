@@ -1,0 +1,9 @@
+<p>
+  threads works!
+</p>
+<h3>Threads observed</h3>
+<div class="position" *ngIf="threads.length !== 0">
+  <div *ngFor="let thread of threads | async">
+    <h1>Title: <a [routerLink]="['threads', thread._id]">{{thread.title}}</a> <small>submitted on {{thread.date}} by {{thread._author.username}}</small></h1>
+  </div>
+</div>
