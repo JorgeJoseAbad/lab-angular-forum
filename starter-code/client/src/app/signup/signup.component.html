@@ -1,12 +1,16 @@
+<h1> Signup </h1>
+<form (ngSubmit)="signup(myForm)" #myForm="ngForm">
 
-<h3>is login component</h3>
-<h1> Login</h1>
-<form (ngSubmit)="login(myForm)" #myForm="ngForm">
   <label> Username </label>
   <input type="text" [(ngModel)]="username" name="username"/>
+
   <label> Password </label>
   <input type="password" [(ngModel)]="password" name="password"/>
 
-  <button type="submit"> login </button>
+  <label> email </label>
+  <input type="text" [(ngModel)]="email" name="email"/>
+
+  <button type="submit"> signup </button>
+  
 </form>
 <p class="error"> {{ error }} </p>

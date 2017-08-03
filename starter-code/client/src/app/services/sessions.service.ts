@@ -33,6 +33,12 @@ export class SessionsService {
     return Observable.throw(e.json().message);
   }
 
+  signup(user:User):Observable<User>{
+    return this.http.post(`${this.BASE_URL}/signup`, user, this.options)
+      .map(res => res.json())
+      .catch(this.handleError);
+  };
+
   login(username:string, password:string):Observable<User> {
     return this.http.post(`${this.BASE_URL}/login`, {username,password}, this.options)
       .map(res => {

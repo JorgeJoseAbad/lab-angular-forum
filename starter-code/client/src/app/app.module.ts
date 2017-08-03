@@ -10,19 +10,22 @@ import { ThreadsComponent } from './threads/threads.component';
 import { LoginComponent } from './login/login.component';
 
 import { ThreadsService} from './services/threads.service';
-import { SessionsService} from './services/sessions.service'
+import { SessionsService} from './services/sessions.service';
+import { SignupComponent } from './signup/signup.component'
 
 
 export const routes: Routes = [
     { path: '', component: ThreadsComponent },
     { path: 'login', component: LoginComponent},
+    { path: 'signup', component: SignupComponent}
   ]
 
 @NgModule({
   declarations: [
     AppComponent,
     ThreadsComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,9 @@ export class ThreadsComponent implements OnInit {
   constructor(private ThreadsService: ThreadsService) { }
 
   ngOnInit() {
+
     this.threads = this.ThreadsService.getThreads();
+    console.log(this.threads);
   }
 
   //getThreads(){
