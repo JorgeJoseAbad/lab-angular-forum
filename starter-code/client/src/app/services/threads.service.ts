@@ -16,7 +16,13 @@ export class ThreadsService {
     console.log("en getlist service");
       return this.http.get(`${this.BASE_URL}/api/threads`)
         .map((res) => res.json());
-
     }
+
+  addNew(thread) {
+      console.log(thread)
+      return this.http.post(`${this.BASE_URL}/api/threads`, thread, this.options)
+        .map((res) => res.json());
+    }
+
 
 }

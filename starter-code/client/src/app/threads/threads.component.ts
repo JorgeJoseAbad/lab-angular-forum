@@ -22,8 +22,5 @@ export class ThreadsComponent implements OnInit {
     console.log(this.threads);
   }
 
-  //getThreads(){
-  //  this.thread = this.ThreadsService.getThreads();
-  //}
 
 }

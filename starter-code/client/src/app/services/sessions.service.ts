@@ -57,4 +57,13 @@ export class SessionsService {
       .catch(this.handleError);
   }
 
+  logout():Observable<Object>{
+    return this.http.get(`${this.BASE_URL}/logout`, this.options)
+      .map(res => {
+        res.json();
+        this.user = undefined;
+      })
+      .catch(this.handleError);
+  }
+
 }

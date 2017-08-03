@@ -8,6 +8,7 @@ console.log("in authentication-controller");
 
 router.post("/login", (req, res, next) => {
   console.log("in /LOGIN");
+  console.log(req.body);
   passport.authenticate('local', (err, user, info) =>  {
     if (err) { return next(err); }
 
@@ -25,6 +26,7 @@ router.post("/login", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
+  console.log("in /signup");
   console.log(req.body);
   const { username, email, password } = req.body;
 
@@ -32,7 +34,7 @@ router.post("/signup", (req, res, next) => {
     return res
       .status(400)
       .json({ message: "Please provide all fields" });
-    
+
   }
 
   User.findOne({ username }, "username", (err, user) => {

@@ -10,4 +10,9 @@ import { SessionsService } from './services/sessions.service';
 export class AppComponent {
   title = 'app works!';
   constructor (private session: SessionsService, private router: Router){}
+
+  logout(){
+    this.session.logout().subscribe();
+    this.router.navigate(['/'])
+  }
 }

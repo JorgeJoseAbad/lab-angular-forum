@@ -11,13 +11,15 @@ import { LoginComponent } from './login/login.component';
 
 import { ThreadsService} from './services/threads.service';
 import { SessionsService} from './services/sessions.service';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { NewThreadComponent } from './new-thread/new-thread.component'
 
 
 export const routes: Routes = [
     { path: '', component: ThreadsComponent },
     { path: 'login', component: LoginComponent},
-    { path: 'signup', component: SignupComponent}
+    { path: 'signup', component: SignupComponent},
+    { path: 'threads/new', component: NewThreadComponent}
   ]
 
 @NgModule({
@@ -25,7 +27,8 @@ export const routes: Routes = [
     AppComponent,
     ThreadsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NewThreadComponent
   ],
   imports: [
     BrowserModule,
