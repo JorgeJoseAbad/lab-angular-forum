@@ -8,8 +8,8 @@ import { ThreadsService} from '../services/threads.service';
   styleUrls: ['./new-thread.component.css']
 })
 export class NewThreadComponent implements OnInit {
-error:string;
-form:Object;
+error: string;
+form: Object;
   constructor(private threadservice: ThreadsService, private router:Router) { }
 
   ngOnInit() {
@@ -19,7 +19,8 @@ form:Object;
     this.threadservice.addNew(form.value)
       .subscribe(
       (thread) => {
-        console.log(thread)
+        console.log(thread);
+        console.log(thread._id);
         this.router.navigate([''])
       },
       (err) => this.error = err

@@ -8,7 +8,7 @@ import { ThreadsService} from '../services/threads.service';
   selector: 'app-threads',
   templateUrl: './threads.component.html',
   styleUrls: ['./threads.component.css'],
-  providers: [ThreadsService]
+  
 })
 export class ThreadsComponent implements OnInit {
 

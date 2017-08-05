@@ -12,14 +12,17 @@ import { LoginComponent } from './login/login.component';
 import { ThreadsService} from './services/threads.service';
 import { SessionsService} from './services/sessions.service';
 import { SignupComponent } from './signup/signup.component';
-import { NewThreadComponent } from './new-thread/new-thread.component'
+import { NewThreadComponent } from './new-thread/new-thread.component';
+import { SingleThreadComponent } from './single-thread/single-thread.component'
 
 
 export const routes: Routes = [
     { path: '', component: ThreadsComponent },
     { path: 'login', component: LoginComponent},
     { path: 'signup', component: SignupComponent},
-    { path: 'threads/new', component: NewThreadComponent}
+    { path: 'threads/new', component: NewThreadComponent},
+    { path: 'threads/:id', component: SingleThreadComponent},
+    { path: '**', redirectTo: '' }
   ]
 
 @NgModule({
@@ -28,7 +31,8 @@ export const routes: Routes = [
     ThreadsComponent,
     LoginComponent,
     SignupComponent,
-    NewThreadComponent
+    NewThreadComponent,
+    SingleThreadComponent
   ],
   imports: [
     BrowserModule,
