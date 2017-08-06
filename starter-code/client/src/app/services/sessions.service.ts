@@ -58,7 +58,7 @@ export class SessionsService {
   }
 
   logout():Observable<Object>{
-    return this.http.get(`${this.BASE_URL}/logout`, this.options)
+    return this.http.post(`${this.BASE_URL}/logout`, this.options)
       .map(res => {
         res.json();
         this.user = undefined;

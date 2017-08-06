@@ -18,13 +18,13 @@ form: Object;
   newThread(form){
     this.threadservice.addNew(form.value)
       .subscribe(
-      (thread) => {
-        console.log(thread);
-        console.log(thread._id);
-        this.router.navigate([''])
-      },
-      (err) => this.error = err
-    );
+        (thread) => {
+          console.log(thread);
+          console.log(thread._id);
+          this.router.navigate([''])
+        },
+        (err) => this.error = err
+      );
   }
 
 }

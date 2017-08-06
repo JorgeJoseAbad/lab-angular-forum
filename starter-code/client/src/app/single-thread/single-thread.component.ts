@@ -20,10 +20,10 @@ export class SingleThreadComponent implements OnInit {
   threadId: string;
 
   constructor(private threadservice: ThreadsService,
-              private route: ActivatedRoute,
+              private activatedroute: ActivatedRoute,
               private Session: SessionsService) {
 
-    route.params
+    activatedroute.params
       .mergeMap( t => threadservice.getSingleThread(t))
       .subscribe( thread => {
         console.log(thread);

@@ -31,6 +31,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', loggedIn, (req, res, next) => {
   console.log("router post / threads");
+  console.log(req.user);
   console.log(req.body);
   const newThread = new Thread({
     _author: req.user._id,
