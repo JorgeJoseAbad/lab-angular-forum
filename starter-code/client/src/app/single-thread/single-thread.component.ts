@@ -14,7 +14,7 @@ import "rxjs/add/operator/mergeMap";
 
 export class SingleThreadComponent implements OnInit {
   thread: Object;
-  t: Object;
+  t: string;
   error: string;
   content: string;
   threadId: string;
@@ -27,14 +27,20 @@ export class SingleThreadComponent implements OnInit {
       .mergeMap( t => threadservice.getSingleThread(t))
       .subscribe( thread => {
         console.log(thread);
+        console.log(thread._id);
         this.thread = thread;
+        this.threadId=thread._id;
       });
 }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-       //this.thread.id = params['threadId'];
-       });
+
+       };
+
+
+  addReply(){
+    console.log(this.threadId);
+    this.threadservice.addReply(this.threadId, this.content).subscribe();
   }
 
 }

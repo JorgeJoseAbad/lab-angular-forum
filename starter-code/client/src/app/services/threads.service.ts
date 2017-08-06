@@ -31,5 +31,11 @@ export class ThreadsService {
       .map((res)=>res.json());
   }
 
+  addReply(id,content){
+    console.log(id,content);
+    return this.http.post(`${this.BASE_URL}/api/threads/${id}/replies`,{content:content},this.options)
+      .map((res)=>res.json());
+  }
+
 
 }
