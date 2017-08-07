@@ -1,1 +1,9 @@
 
+.mainControl{
+  background-color: #eae7bd;
+}
+
+.userControl{
+  background-color: #aae7bd;
+  display: block;
+}

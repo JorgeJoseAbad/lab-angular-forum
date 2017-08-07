@@ -19,7 +19,7 @@ error: String;
         .subscribe(
         (user) => {
           console.log(user)
-          this.router.navigate(['private'])
+          this.router.navigate([''])  //changed 'private' to ''
         },
         (err) => this.error = err
         );
